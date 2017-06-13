@@ -4,6 +4,6 @@
 public class CounterHelper {
 
     public String[] getArray(String words) {
-        return new String[] {"the", "day", "is", "sunny", "the", "the"};
+        return words.split("\\s+");
     }
 }
