@@ -1,6 +1,9 @@
 import org.junit.Test;
+import java.io.IOException;
 
-import static org.junit.Assert.*;
+import static org.hamcrest.CoreMatchers.is;
+import static org.junit.Assert.assertArrayEquals;
+import static org.junit.Assert.assertThat;
 
 /**
  * Created by pphan on 14/06/2017.
@@ -15,5 +18,15 @@ public class CounterHelperTest {
         String[] array = counterHelper.getArray(words);
         //Then
         assertArrayEquals(array, new String[]{"the", "day", "is", "sunny", "the", "the"});
+    }
+
+    @Test
+    public void should_read_string_from_file() throws IOException {
+        //When
+        CounterHelper counterHelper = new CounterHelper();
+        //Given
+        String result = counterHelper.getStringFromFile();
+        //Then
+        assertThat(result,is("Hello world! Hi!"));
     }
 }
