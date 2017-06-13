@@ -4,3 +4,5 @@
 tdd-java-base.*
 build
 out
+
+.idea
