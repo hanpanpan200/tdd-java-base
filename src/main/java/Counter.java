@@ -14,7 +14,7 @@ public class Counter {
         return wordCounts;
     }
 
-    public List<Map.Entry<String, Integer>> sort_word_by_count(Map<String, Integer> wordCounts) {
+    public List<Map.Entry<String, Integer>> sortWordByCount(Map<String, Integer> wordCounts) {
         List<Map.Entry<String, Integer>> entries = new ArrayList<>(wordCounts.entrySet());
         Collections.sort(entries, (o1, o2) -> (o2.getValue() - o1.getValue()));
         return entries;

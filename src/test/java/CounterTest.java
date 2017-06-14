@@ -9,13 +9,12 @@ import static org.junit.Assert.assertThat;
  * Created by pphan on 13/06/2017.
  */
 public class CounterTest {
-
     @Test
     public void should_get_correct_word_count() {
-        //Given
+        //When
         String[] words = {"the", "day", "is", "the", "the"};
         Counter counter = new Counter();
-        //When
+        //Given
         Map<String, Integer> result = counter.count(words);
         //Then
         assertThat(result.get("the"),is(3));
@@ -25,14 +24,14 @@ public class CounterTest {
 
     @Test
     public void should_sort_word_counts_in_descending_order() {
-        //Given
+        //When
         Map<String, Integer> wordCounts = new HashMap<>();
         wordCounts.put("day", 1);
         wordCounts.put("the", 3);
         wordCounts.put("is", 2);
         Counter counter = new Counter();
-        //When
-        List<Map.Entry<String, Integer>> result = counter.sort_word_by_count(wordCounts);
+        //Given
+        List<Map.Entry<String, Integer>> result = counter.sortWordByCount(wordCounts);
         //Then
         Iterator iterator = result.iterator();
         Integer index = 0;

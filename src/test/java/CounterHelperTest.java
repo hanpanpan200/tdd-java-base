@@ -11,10 +11,10 @@ import static org.junit.Assert.assertThat;
 public class CounterHelperTest {
     @Test
     public void should_get_array_from_string() {
-        //When
+        //Given
         String words = "the day is  sunny the the   ";
         CounterHelper counterHelper = new CounterHelper();
-        //Given
+        //When
         String[] array = counterHelper.getArray(words);
         //Then
         assertArrayEquals(array, new String[]{"the", "day", "is", "sunny", "the", "the"});
@@ -22,9 +22,9 @@ public class CounterHelperTest {
 
     @Test
     public void should_read_string_from_file() throws IOException {
-        //When
-        CounterHelper counterHelper = new CounterHelper();
         //Given
+        CounterHelper counterHelper = new CounterHelper();
+        //When
         String result = counterHelper.getStringFromFile();
         //Then
         assertThat(result,is("Hello world! Hi!"));
